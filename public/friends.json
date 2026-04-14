@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Arif Ahmed",
+    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop",
+    "email": "arif.ahmed@example.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["University", "Close Friend"],
+    "bio": "A childhood friend who loves adventure. We enjoy hiking and outdoor cooking together.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Sumaiya Khan",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&fit=crop",
+    "email": "sumaiya.k@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["Work", "Tech Enthusiast"],
+    "bio": "A brilliant colleague and mentor. We often discuss the latest tech trends and UI/UX design.",
+    "goal": 30,
+    "next_due_date": "2025-08-15"
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Rahman",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&fit=crop",
+    "email": "tanvir.r@example.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["School", "Cricket"],
+    "bio": "School life buddy. We share a deep passion for cricket and catch up every weekend.",
+    "goal": 14,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 4,
+    "name": "Nadia Islam",
+    "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&fit=crop",
+    "email": "nadia.i@example.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["Travel", "Photography"],
+    "bio": "My favorite travel partner. She captures amazing moments with her professional photography skills.",
+    "goal": 30,
+    "next_due_date": "2025-06-20"
+  },
+  {
+    "id": 5,
+    "name": "Zubayer Hossain",
+    "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&fit=crop",
+    "email": "zubayer@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["Gym", "Nutrition"],
+    "bio": "Gym partner who keeps me motivated. He is very focused on healthy living and fitness.",
+    "goal": 7,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 6,
+    "name": "Farhana Akter",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop",
+    "email": "farhana.a@example.com",
+    "days_since_contact": 8,
+    "status": "almost due",
+    "tags": ["Neighbor", "Cooking"],
+    "bio": "A kind-hearted neighbor. We often exchange home-cooked meals and gardening tips.",
+    "goal": 10,
+    "next_due_date": "2025-07-22"
+  }
+]

@@ -1,26 +1,27 @@
-"use client"; 
+  "use client";
+     
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { HiOutlineHome } from "react-icons/hi"; 
-import { MdOutlineTimeline, MdOutlineInsights } from "react-icons/md";
+import { MdOutlineInsights } from "react-icons/md";
 import { IoTimeOutline } from "react-icons/io5";
 
 const Nav = () => {
     const pathname = usePathname(); 
 
-   
+    
     const linkStyle = (path) => 
         pathname === path 
-        ? 'flex items-center gap-1 bg-[#2D4F44] text-white px-4 py-2 rounded-md ' 
-        : 'flex items-center gap-1 text-gray-600 px-4 py-2 hover:text-[#2D4F44]'; 
+        ? 'flex items-center gap-1 bg-[#2D4F44] text-white px-4 py-2 rounded-md transition' 
+        : 'flex items-center gap-1 text-gray-600 px-4 py-2 hover:text-[#2D4F44] transition'; 
 
     return (
-        <nav className='flex justify-center w-full py-4 shadow'>
-            <div className='flex items-center justify-between w-[90%] md:w-[80%]'>
+        <nav className='flex justify-center w-full py-4 shadow z-2'>
+            <div className='flex items-center justify-between w-[90%] md:w-[80%] mx-auto'>
                 <div className="logo">
-                    <h2 className='text-xl font-bold text-[#1a2e28]'>
+                    <h2 className='text-2xl font-bold text-[#1a2e28]'>
                         Keen<span className='text-[#2D4F44]'>Keeper</span>
                     </h2>
                 </div>
@@ -34,7 +35,8 @@ const Nav = () => {
                         </li>
                         <li>
                             <Link href="/timeline" className={linkStyle('/timeline')}>
-                                <IoTimeOutline /> Timeline
+                                <IoTimeOutline />
+                                                Timeline
                             </Link>
                         </li>
                         <li>
@@ -50,3 +52,6 @@ const Nav = () => {
 };
 
 export default Nav;
+   
+
+

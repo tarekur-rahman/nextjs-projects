@@ -7,6 +7,7 @@ import React from 'react';
 import { HiOutlineHome } from "react-icons/hi"; 
 import { MdOutlineInsights } from "react-icons/md";
 import { IoTimeOutline } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Nav = () => {
     const pathname = usePathname(); 
@@ -25,8 +26,11 @@ const Nav = () => {
                         Keen<span className='text-[#2D4F44]'>Keeper</span>
                     </h2>
                 </div>
+
+
+                <div className='md:hidden'><span><RxHamburgerMenu /></span></div>
                 
-                <div className="links">
+                <div className="links hidden md:block">
                     <ul className='flex items-center gap-4'>
                         <li>
                             <Link href="/" className={linkStyle('/')}>

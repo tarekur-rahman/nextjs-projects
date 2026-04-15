@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KeenKeeper - Relationship Management App
 
-## Getting Started
+KeenKeeper is a modern web application designed to help users maintain and nurture meaningful connections with their friends and family. It tracks the time since your last contact and helps you stay on top of your social goals.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Dynamic Friend Profiles: View detailed information for each connection via dynamic routing.
+- Relationship Tracking: Monitor days since the last contact and set specific interaction goals.
+- Quick Actions: Integrated buttons for initiating calls, texts, or video chats with instant feedback.
+- Responsive Design: Fully optimized for mobile, tablet, and desktop views using Tailwind CSS.
+- Toast Notifications: Real-time user feedback for every action performed within the app.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Framework: Next.js (App Router)
+- Styling: Tailwind CSS
+- Icons: Lucide React
+- Notifications: React Hot Toast
+- Data Management: Client-side fetching with useEffect from local JSON
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation and Setup
 
-## Learn More
+Follow these steps to run the project locally:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   git clone https://github.com/tarekur-rahman/your-repo-name.git
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Navigate to the project directory:
+   cd your-repo-name
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install dependencies:
+   npm install
 
-## Deploy on Vercel
+4. Start the development server:
+   npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open http://localhost:3000 in your browser to see the application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+- /app/friend/[id]/page.jsx: Main logic for dynamic friend detail cards.
+- /public/friends.json: Data source for the application.
+- /components/: Directory for reusable UI components.
+
+## Deployment
+
+The project is live at:
+https://nextjs-project-tau-ochre.vercel.app/
+
+## Contribution
+
+If you would like to contribute to this project, please fork the repository and submit a pull request.
+
+---
+Developed by Tarekur Rahman

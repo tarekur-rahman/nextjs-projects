@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='bg-[#244D3F] text-center '>
-            <div className='py-10 space-y-3 text-center border border-x-0 border-t-0  border-b-gray-500 w-[90%] lg:w-[80%] mx-auto'>
+            <div className='py-10 space-y-5 text-center border border-x-0 border-t-0  border-b-gray-500 w-[90%] lg:w-[80%] mx-auto'>
                 <h1 className='text-3xl md:text-5xl text-center font-bold text-white'>KeenKeeper</h1>
                 <p className='text-center text-gray-200'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
 

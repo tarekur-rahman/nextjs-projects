@@ -1,30 +1,38 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, use } from 'react';
 import { Clock, Archive, Trash2, Phone, MessageSquare, Video, Edit2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const CardDetails = ({ params }) => {
+    const resolvedParams = use(params); 
+    const id = resolvedParams.id;
+
     const [friend, setFriend] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const resolvedParams = await params;
-                const res = await fetch('http://localhost:3000/friends.json');
+                const res = await fetch('https://nextjs-project-tau-ochre.vercel.app//friends.json' , { cache: 'no-store' });
+                if (!res.ok) throw new Error('Data not found');
+                
                 const friends = await res.json();
-                const foundFriend = friends.find((f) => String(f.id) === String(resolvedParams.id));
+                const foundFriend = friends.find((f) => String(f.id) === String(id));
+                
                 setFriend(foundFriend);
                 setLoading(false);
             } catch (error) {
+                console.error("Fetch error:", error);
                 setLoading(false);
             }
         };
         fetchData();
-    }, [params]);
+    }, [id]);
 
     const handleAction = (type) => {
-        toast.success(`You are ${type} to ${friend.name}`);
+        if (friend) {
+            toast.success(`You are ${type} to ${friend.name}`);
+        }
     };
 
     if (loading) return <div className="text-center py-20 font-bold text-[#244D3F]">Loading...</div>;
@@ -41,19 +49,19 @@ const CardDetails = ({ params }) => {
                             <h2 className="text-2xl font-bold text-gray-800 mt-4">{friend.name}</h2>
                             <div className="flex flex-col items-center gap-2 mt-2">
                                 <span className="bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">{friend.status}</span>
-                                <span className="bg-green-300 text-[#244D3F] text-[10px] font-bold px-3 py-1 rounded-full uppercase">{friend.tags[0]}</span>
+                                <span className="bg-green-300 text-[#244D3F] text-[10px] font-bold px-3 py-1 rounded-full uppercase">{friend.tags?.[0]}</span>
                             </div>
                             <p className="text-gray-400 italic mt-6 text-sm">"{friend.bio}"</p>
                         </div>
 
                         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-sm font-medium">
-                            <button className="w-full flex items-center justify-center gap-2 py-4 border-b border-gray-300 text-gray-700">
+                            <button className="w-full flex items-center justify-center gap-2 py-4 border-b border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
                                 <Clock size={16} /> Snooze 2 Weeks
                             </button>
-                            <button className="w-full flex items-center justify-center gap-2 py-4 border-b border-gray-300 text-gray-700">
+                            <button className="w-full flex items-center justify-center gap-2 py-4 border-b border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
                                 <Archive size={16} /> Archive
                             </button>
-                            <button className="w-full flex items-center justify-center gap-2 py-4 text-red-500">
+                            <button className="w-full flex items-center justify-center gap-2 py-4 text-red-500 hover:bg-red-50 transition-colors">
                                 <Trash2 size={16} /> Delete
                             </button>
                         </div>
@@ -80,7 +88,7 @@ const CardDetails = ({ params }) => {
                                 <h4 className="text-lg font-bold text-gray-700">Relationship Goal</h4>
                                 <p className="text-gray-500 mt-4 text-sm">Connect every <span className="text-gray-800 font-bold">{friend.goal} days</span></p>
                             </div>
-                            <button className="bg-gray-50 text-gray-600 px-4 py-1.5 rounded border border-gray-200 text-sm font-medium flex items-center gap-2">
+                            <button className="bg-gray-50 text-gray-600 px-4 py-1.5 rounded border border-gray-200 text-sm font-medium flex items-center gap-2 hover:bg-gray-100 transition-colors">
                                 <Edit2 size={14} /> Edit
                             </button>
                         </div>
@@ -88,15 +96,15 @@ const CardDetails = ({ params }) => {
                         <div className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
                             <h4 className="text-lg font-bold text-gray-700 mb-6">Quick Check-In</h4>
                             <div className="grid grid-cols-3 gap-4">
-                                <button onClick={() => handleAction('calling')} className="flex flex-col items-center justify-center py-6 border bg-[#F8FAFC] border-gray-200 rounded-xl text-gray-600">
+                                <button onClick={() => handleAction('calling')} className="flex flex-col items-center justify-center py-6 border bg-[#F8FAFC] border-gray-200 rounded-xl text-gray-600 hover:border-green-300 transition-all">
                                     <Phone size={24} className="mb-2" />
                                     <p className="font-medium">Call</p>
                                 </button>
-                                <button onClick={() => handleAction('sending text')} className="flex flex-col items-center justify-center py-6 border bg-[#F8FAFC] border-gray-200 rounded-xl text-gray-600">
+                                <button onClick={() => handleAction('sending text')} className="flex flex-col items-center justify-center py-6 border bg-[#F8FAFC] border-gray-200 rounded-xl text-gray-600 hover:border-green-300 transition-all">
                                     <MessageSquare size={24} className="mb-2" />
                                     <p className="font-medium">Text</p>
                                 </button>
-                                <button onClick={() => handleAction('starting video call')} className="flex flex-col items-center justify-center py-6 border bg-[#F8FAFC] border-gray-200 rounded-xl text-gray-600">
+                                <button onClick={() => handleAction('starting video call')} className="flex flex-col items-center justify-center py-6 border bg-[#F8FAFC] border-gray-200 rounded-xl text-gray-600 hover:border-green-300 transition-all">
                                     <Video size={24} className="mb-2" />
                                     <p className="font-medium">Video</p>
                                 </button>

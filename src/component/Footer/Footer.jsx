@@ -18,12 +18,12 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='w-[90%] lg:w-[80%] mx-auto md:flex  md:justify-between py-10'>
-                <div><p className='text-gray-300'>© 2026 KeenKeeper. All rights reserved.</p></div>
+            <div className='w-[90%] lg:w-[80%] mx-auto flex flex-col flex-col-reverse md:flex-row md:flex  md:justify-between py-10'>
+                <div><p className='text-gray-300'>© 2026 KeenKeeper. All rights reserved. Developed by Tarekur Rahman</p></div>
                 <div className='space-y-2 md:flex justify-between gap-5'>
-                    <p className='text-gray-300'>Privacy Policy</p>
+                    <p className='text-gray-300 '>Privacy Policy</p>
                     <p className='text-gray-300'>Terms & Condition</p>
-                    <p className='text-gray-300'>Cookei Policy</p>
+                    <p className='text-gray-300 pb-3 md:pb-0'>Cookie Policies</p>
                 </div>
             </div>
         </div>
